@@ -10,7 +10,7 @@ ncks -O -C -a -v glamt,gphit $path1/coordinates.nc grid_eORCA1_T.nc
 
 #make sure that coordinates variables contains only 2 dimension. Use ncwa -a to remove degenerated dimensions (with a size of 1) for example:
 
-# remove degenerated dimention time (if existing)
+# remove degenerated dimension time (if existing)
 ncwa -O -a t grid_eORCA1_T.nc  grid_eORCA1_T.nc
 # remove degenerated dimention z (if existing)
 ncwa -O -a z grid_eORCA1_T.nc  grid_eORCA1_T.nc
@@ -21,3 +21,5 @@ ncap2 -O -s 'dummy[y,x]=1b' grid_eORCA1_T.nc grid_eORCA1_T.nc
 ncatted -a coordinates,dummy,c,c,'glamt gphit' \
         -a units,glamt,c,c,'degrees_east'      \
         -a units,gphit,c,c,'degrees_north'  grid_eORCA1_T.nc
+
+ncks -v nav_lat_grid_T,nav_lon_grid_T,bounds_nav_lon_grid_T,bounds_nav_lat_grid_T,deptht,deptht_bounds,e3t eANT025.L121-sic95_1m_19790101_19790131_grid_T.nc nemo_grids_cdo.nc
