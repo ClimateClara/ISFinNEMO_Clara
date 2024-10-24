@@ -22,4 +22,3 @@ ncatted -a coordinates,dummy,c,c,'glamt gphit' \
         -a units,glamt,c,c,'degrees_east'      \
         -a units,gphit,c,c,'degrees_north'  grid_eORCA1_T.nc
 
-ncks -v nav_lat_grid_T,nav_lon_grid_T,bounds_nav_lon_grid_T,bounds_nav_lat_grid_T,deptht,deptht_bounds,e3t eANT025.L121-sic95_1m_19790101_19790131_grid_T.nc nemo_grids_cdo.nc
