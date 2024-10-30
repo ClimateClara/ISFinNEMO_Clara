@@ -22,3 +22,5 @@ ncatted -a coordinates,dummy,c,c,'glamt gphit' \
         -a units,glamt,c,c,'degrees_east'      \
         -a units,gphit,c,c,'degrees_north'  grid_eORCA1_T.nc
 
+
+ncks -v nav_lat,nav_lon,bounds_nav_lon,bounds_nav_lat,deptht,deptht_bounds,e3t,time_counter /data/cburgard/CASIMIR_SIMU/raw/n42openc/n42openc_00910101_01001231_1Y_grid_T.nc NEMO_gridT_eORCA1_cdo.nc
