@@ -24,3 +24,20 @@ ncatted -a coordinates,dummy,c,c,'glamt gphit' \
 
 
 ncks -v nav_lat,nav_lon,bounds_nav_lon,bounds_nav_lat,deptht,deptht_bounds,e3t,time_counter /data/cburgard/CASIMIR_SIMU/raw/n42openc/n42openc_00910101_01001231_1Y_grid_T.nc NEMO_gridT_eORCA1_cdo.nc
+
+ncatted -a _CoordinateAxisType,dummy,d,, IMBIE_2km_stereo_withbnds.nc
+ncatted -a coordinates,dummy,c,c,lon lat IMBIE_2km_stereo_withbnds.nc
+ncatted -a bounds,dummy,d,, IMBIE_2km_stereo_withbnds.nc
+ncks -v dummy toto.nc IMBIE_2km_stereo_withbnds.nc
+ncrename -v lon,dummy toto.nc
+ncks -v lon IMBIE_2km_stereo_withbnds.nc toto.nc
+
+ncatted -O -a ,global,d,, IMBIE_2km_stereo_withbnds.nc IMBIE_2km_stereo_withbnds.nc
+ncap2 -O -s dummy[y,x]=1b IMBIE_2km_stereo_withbnds.nc IMBIE_2km_stereo_withbnds.nc
+ncatted -a coordinates,dummy,c,c,"lon lat" -a units,lon,c,c,"degreeE" -a units,lat,c,c,"degreeN" IMBIE_2km_stereo_withbnds.nc
+
+
+ncatted -O -a ,global,d,, NEMO_grid_withbnds.nc NEMO_grid_withbnds.nc
+ncap2 -O -s dummy[y,x]=1b NEMO_grid_withbnds.nc NEMO_grid_withbnds.nc
+ncatted -a coordinates,dummy,c,c,"lon lat" -a units,lon,c,c,"degreeE" -a units,lat,c,c,"degreeN" NEMO_grid_withbnds.nc
+ncap2 -O -s 'lon_bnds=fixed_lon_bnds; lat_bnds=fixed_lat_bnds' NEMO_grid_withbnds.nc NEMO_grid_withbnds_fixed.nc
