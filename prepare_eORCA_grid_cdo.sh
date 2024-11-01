@@ -40,4 +40,3 @@ ncatted -a coordinates,dummy,c,c,"lon lat" -a units,lon,c,c,"degreeE" -a units,l
 ncatted -O -a ,global,d,, NEMO_grid_withbnds.nc NEMO_grid_withbnds.nc
 ncap2 -O -s dummy[y,x]=1b NEMO_grid_withbnds.nc NEMO_grid_withbnds.nc
 ncatted -a coordinates,dummy,c,c,"lon lat" -a units,lon,c,c,"degreeE" -a units,lat,c,c,"degreeN" NEMO_grid_withbnds.nc
-ncap2 -O -s 'lon_bnds=fixed_lon_bnds; lat_bnds=fixed_lat_bnds' NEMO_grid_withbnds.nc NEMO_grid_withbnds_fixed.nc
