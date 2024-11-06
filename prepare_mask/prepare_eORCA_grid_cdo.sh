@@ -38,3 +38,7 @@ ncatted -a coordinates,dummy,c,c,"lon lat" -a units,lon,c,c,"degreeE" -a units,l
 ncatted -O -a ,global,d,, NEMO_grid_withbnds.nc NEMO_grid_withbnds.nc
 ncap2 -O -s dummy[y,x]=1b NEMO_grid_withbnds.nc NEMO_grid_withbnds.nc
 ncatted -a coordinates,dummy,c,c,"lon lat" -a units,lon,c,c,"degreeE" -a units,lat,c,c,"degreeN" NEMO_grid_withbnds.nc
+
+ncatted -O -a ,global,d,, stereo_1km_withbnds.nc stereo_1km_withbnds.nc
+ncap2 -O -s dummy[y,x]=1b stereo_1km_withbnds.nc stereo_1km_withbnds.nc
+ncatted -a coordinates,dummy,c,c,"lon lat" -a units,lon,c,c,"degreeE" -a units,lat,c,c,"degreeN" stereo_1km_withbnds.nc
