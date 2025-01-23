@@ -1,0 +1,8 @@
+gridtype = lonlat
+gridsize = 64800            # Total number of grid points (180x360)
+xsize    = 360               # 360 longitude points
+ysize    = 180               # 180 latitude points
+xfirst   = -179.5             # Longitude starts at -179.5°
+xinc     = 1.0             # 1° resolution in longitude
+yfirst   = -89.5            # Latitude starts at -89.5°
+yinc     = 1.0             # 1° resolution in latitude
